@@ -101,7 +101,7 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('production', function() {
-  connect.server({ port: 80, root: 'www/'});
+  connect.server({ port: process.env.PORT || 8000, root: 'www/'});
 });
 
 gulp.task('init', function() {
