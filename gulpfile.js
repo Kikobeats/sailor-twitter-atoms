@@ -100,6 +100,10 @@ gulp.task('webserver', function() {
   connect.server({ port: 8000, root: 'www/', livereload: true });
 });
 
+gulp.task('production', function() {
+  connect.server({ port: 80, root: 'www/'});
+});
+
 gulp.task('init', function() {
   gulp.run(['dependencies', 'coffee', 'styl', 'yml']);
 });
