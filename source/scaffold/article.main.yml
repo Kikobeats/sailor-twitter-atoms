@@ -1,0 +1,9 @@
+children:
+  - Organism.SailorSession:
+      children: []
+      id: login
+      events:
+        - login
+        - signup
+        - error
+id: main

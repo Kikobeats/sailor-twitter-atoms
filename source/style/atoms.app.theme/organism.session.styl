@@ -1,0 +1,38 @@
+[data-atoms=app]
+  [data-organism-section=sailorsession]
+    &.no-image > [data-atom-image]
+      display: none
+    &.no-copyright > [data-atom-heading]
+      display: none
+    > [data-atom-image]
+      height: SIZE = 12rem
+      min-width: SIZE
+      background-color: rgba(220, 220, 220, 0)
+    AIR = 1rem
+    > [data-molecule-form]
+      margin: 1rem
+      *
+        text-align: center
+    > [data-atom-text]
+      position: absolute
+      display: block
+      left: AIR
+      right: AIR
+      bottom: AIR
+      font-size: .8rem
+      text-align: center
+
+[data-atoms=app]
+  [data-organism-section=sailorprofile]
+    *
+      text-align: center
+    > [data-atom-heading]
+      HEIGHT = 2.5rem
+      margin-top: -(HEIGHT)
+      height: HEIGHT
+      font-size: 1.05rem
+      line-height: HEIGHT
+      background-color: rgba(0,0,0,0.5)
+      color: white
+    > [data-molecule-form] > [data-atom-input][type=file]
+      display: none

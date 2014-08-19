@@ -1,0 +1,28 @@
+{
+  "name": "sailor-twitter",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Kikobeats/sailor-twitter",
+  "authors": [
+    "Kiko Beats <josefrancisco.verdu@gmail.com>"
+  ],
+  "description": "Twitter clon based on Sailor",
+  "keywords": [
+    "atoms",
+    "sails",
+    "sailor",
+    "twitter"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "momentjs": "*",
+    "sails.io.js": "*"
+  }
+}
