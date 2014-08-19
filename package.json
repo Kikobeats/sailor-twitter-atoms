@@ -7,9 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "gulp": "*",
-    "gulp-connect": "*"
-  },
-  "devDependencies": {
+    "gulp-connect": "*",
     "gulp-coffee": "*",
     "gulp-concat": "*",
     "gulp-header": "*",
