@@ -5,11 +5,13 @@
   "author": "Kiko Beats <josefrancisco.verdu@gmail.com>",
   "homepage": "http://tapquo.com",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "gulp": "*",
+    "gulp-connect": "*"
+  },
+  "devDependencies": {
     "gulp-coffee": "*",
     "gulp-concat": "*",
-    "gulp-connect": "*",
     "gulp-header": "*",
     "gulp-jasmine": "*",
     "gulp-stylus": "*",
