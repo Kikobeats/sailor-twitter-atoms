@@ -31,6 +31,5 @@ coverage
 # Other
 ############################
 .node_history
-atoms/bower_components/momentjs/
-atoms/bower_components/sails.io.js/
-assets/
+bower_components/momentjs/
+bower_components/sails.io.js/

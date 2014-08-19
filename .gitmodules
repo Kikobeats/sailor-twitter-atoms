@@ -1,0 +1,15 @@
+[submodule "bower_components/atoms"]
+	path = bower_components/atoms
+	url = https://github.com/tapquo/bower-atoms
+[submodule "bower_components/STYLmethods"]
+	path = bower_components/STYLmethods
+	url = https://github.com/soyjavi/STYLmethods
+[submodule "bower_components/atoms-icons"]
+	path = bower_components/atoms-icons
+	url = https://github.com/tapquo/atoms-icons
+[submodule "bower_components/bower.hope"]
+	path = bower_components/bower.hope
+	url = https://github.com/soyjavi/bower.hope
+[submodule "bower_components/quojs"]
+	path = bower_components/quojs
+	url = https://github.com/soyjavi/bower-quojs
