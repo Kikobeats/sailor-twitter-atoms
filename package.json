@@ -18,6 +18,6 @@
     "gulp-yml": "*"
   },
   "scripts": {
-    "start": "gulp webserver"
+    "start": "node_modules/.bin/gulp webserver"
   }
 }
