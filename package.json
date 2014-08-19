@@ -1,4 +1,4 @@
-{
+ {
   "name": "sailor-twitter",
   "version": "1.0.0",
   "description": "Twitter clon based on Sailor",
@@ -16,5 +16,8 @@
     "gulp-uglify": "*",
     "gulp-util": "*",
     "gulp-yml": "*"
+  },
+  "scripts": {
+    "start": "gulp webserver"
   }
 }
