@@ -1,8 +1,8 @@
 "use strict"
 
-window.Sailor = do ->
+window.Sailor = ((env) ->
   lang = navigator.language.split("-")[0]
-  api  = 'http://localhost:1342'
+  if env is 'development' then api = 'http://localhost:1342' else api = 'http://sailor-twitter-api.herokuapp.com'
 
   _proxy = (type, method, parameters = {}, background = false) ->
     promise = new Hope.Promise()
@@ -37,22 +37,22 @@ window.Sailor = do ->
 
   # EXPORTS
   ## URL Paths
-  host   : api
-  login : "user/login"
-  signup: "user"
-  user  : "user"
-  tweet : "tweet"
-  tweets: "tweet?sort=id asc"
+  host    : api
+  login   : "user/login"
+  signup  : "user"
+  user    : "user"
+  tweet   : "tweet"
+  tweets  : "tweet?sort=id asc"
   ## Methods
-  proxy  : _proxy
-  socket : _socket
-  on     : _on
-  session: _session
-
+  proxy   : _proxy
+  socket  : _socket
+  on      : _on
+  session : _session
+  ## Environment
+  env     : env
+)("production")
 
 window.Atoms.Twitter = do ->
-  version : "0.08.18"
-  environment: 'development'
   Organism: {}
   Molecule: {}
   Dialog  : {}
