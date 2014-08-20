@@ -49,7 +49,7 @@ window.Sailor = ((env) ->
   session : _session
   ## Environment
   environment : env
-)("development")
+)("production")
 
 window.Atoms.Twitter = do ->
   _start = ->
