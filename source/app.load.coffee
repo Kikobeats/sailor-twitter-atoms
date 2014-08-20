@@ -10,4 +10,8 @@ Atoms.$ ->
   new Atoms.Twitter.Organism.Menu {}, "assets/scaffold/aside.menu.json"
   new Atoms.Twitter.Dialog.Tweet {}, "assets/scaffold/dialog.tweet.json"
 
-  Atoms.Url.path "main/login"
+  unless Sailor.session()?
+    Atoms.Url.path "main/login"
+  else
+    Atoms.Twitter.start()
+    Atoms.Url.path Atoms.Url.path().substr(1) or "home/main"

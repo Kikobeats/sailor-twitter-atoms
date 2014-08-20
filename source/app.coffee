@@ -52,6 +52,23 @@ window.Sailor = ((env) ->
 )("development")
 
 window.Atoms.Twitter = do ->
+  _start = ->
+    Sailor.socket "GET", Sailor.user, (users, jw) ->
+      __.Entity.User.create user for user in users
+
+    Sailor.socket "GET", Sailor.tweets, (tweets, jw) ->
+      __.Entity.Tweet.create tweet for tweet in tweets
+
+    Sailor.on Sailor.tweet, (tweet) ->
+      __.Entity.Tweet.create tweet.data if tweet.verb is 'created'
+
+    Sailor.on Sailor.user, (user) ->
+      __.Entity.User.create user.data if user.verb is 'created'
+
+  # EXPORTS
+  ## Core
   Organism: {}
   Molecule: {}
   Dialog  : {}
+  ## Methods
+  start   : _start
