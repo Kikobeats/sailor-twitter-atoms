@@ -34,7 +34,7 @@ var dependencies = {
    js    :[ 'bower_components/quojs/quo.standalone.js',
             'bower_components/atoms/atoms.standalone.js',
             'bower_components/atoms/atoms.app.js',
-            'bower_components/hope/hope.js',
+            'bower_components/bower.hope/hope.js',
             'bower_components/momentjs/moment.js',
             'bower_components/momentjs/locale/en-gb.js',
             'bower_components/sails.io.js/dist/sails.io.js'],
@@ -109,7 +109,7 @@ gulp.task('init', function() {
 });
 
 gulp.task('default', function() {
-  gulp.run(['webserver']);
+  gulp.run(['dependencies', 'coffee', 'styl', 'yml', 'webserver']);
   gulp.watch(source.coffee, ['coffee']);
   gulp.watch(source.styl, ['styl']);
   gulp.watch(source.yml, ['yml']);

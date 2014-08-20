@@ -48,7 +48,9 @@ class Atoms.Organism.SailorSession extends Atoms.Organism.Section
         identifier: values.mail
         password: values.password
 
+    console.log user
     Sailor.proxy('POST', Sailor[action], user).then (error, user) =>
+      console.log user
       if error
         @bubble "error", error
       else

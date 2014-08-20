@@ -2,7 +2,7 @@
 
 window.Sailor = ((env) ->
   lang = navigator.language.split("-")[0]
-  if env is 'development' then api = 'http://localhost:1342' else api = 'http://sailor-twitter-api.herokuapp.com'
+  if env is 'development' then api = 'http://localhost:1337' else api = 'http://sailor-twitter-api.herokuapp.com'
 
   _proxy = (type, method, parameters = {}, background = false) ->
     promise = new Hope.Promise()
@@ -29,11 +29,10 @@ window.Sailor = ((env) ->
   _on = (Model, callback) -> io.socket.on Model, (callback)
 
   _session = (data = {}) ->
-    # TODO: sessionStorage or localStorage?
     if Object.keys(data).length is 0
-      JSON.parse(sessionStorage.getItem('user'))
+      JSON.parse(localStorage.getItem('user'))
     else
-      sessionStorage.setItem('user', JSON.stringify(data))
+      localStorage.setItem('user', JSON.stringify(data))
 
   # EXPORTS
   ## URL Paths
@@ -49,8 +48,8 @@ window.Sailor = ((env) ->
   on      : _on
   session : _session
   ## Environment
-  env     : env
-)("production")
+  environment : env
+)("development")
 
 window.Atoms.Twitter = do ->
   Organism: {}
