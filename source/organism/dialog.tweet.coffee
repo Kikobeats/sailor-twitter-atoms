@@ -1,5 +1,7 @@
 class Atoms.Twitter.Dialog.Tweet extends Atoms.Organism.Dialog
 
+  @events   : ["send", "cancel", "error"]
+
   show: ->
     super
     do @onFormChange

@@ -2,7 +2,7 @@
 
 Atoms.$ ->
   console.log "------------------------------------------------------------"
-  console.log "Atoms v#{Atoms.version} (Atoms.App v#{Atoms.App.version})"
+  console.log "Atoms v#{Atoms.version} (Sailor v#{Sailor.version})         "
   console.log "------------------------------------------------------------"
 
   new Atoms.Twitter.Organism.Main {}, "assets/scaffold/article.main.json"
@@ -10,8 +10,8 @@ Atoms.$ ->
   new Atoms.Twitter.Organism.Menu {}, "assets/scaffold/aside.menu.json"
   new Atoms.Twitter.Dialog.Tweet {}, "assets/scaffold/dialog.tweet.json"
 
-  unless Sailor.session()?
+  unless Sailor.store('user')?
     Atoms.Url.path "main/login"
   else
-    Atoms.Twitter.start()
+    Sailor.start()
     Atoms.Url.path Atoms.Url.path().substr(1) or "home/main"

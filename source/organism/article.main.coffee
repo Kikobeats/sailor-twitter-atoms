@@ -10,7 +10,7 @@ class Atoms.Twitter.Organism.Main extends Atoms.Organism.Article
     do @_handler
 
   onSailorSessionError: (event, dispatcher, hierarchy...) ->
-    # Your code...
+    console.log 'Sailor Error ::'
 
   # -- Private --------------------------------------------------
   _handler: ->

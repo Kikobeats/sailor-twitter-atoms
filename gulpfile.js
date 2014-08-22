@@ -32,12 +32,13 @@ var source = {
 
 var dependencies = {
    js    :[ 'bower_components/quojs/quo.standalone.js',
+            'bower_components/bower.hope/hope.js',
             'bower_components/atoms/atoms.standalone.js',
             'bower_components/atoms/atoms.app.js',
-            'bower_components/bower.hope/hope.js',
             'bower_components/momentjs/moment.js',
             'bower_components/momentjs/locale/en-gb.js',
-            'bower_components/sails.io.js/dist/sails.io.js'],
+            'bower_components/sails.io.js/dist/sails.io.js',
+            'bower_components/sailor-client/dist/sailor.js'],
    css  :[  'bower_components/atoms/atoms.app.css',
             'bower_components/atoms-icons/atoms.icons.css'],
    fonts:[  'bower_components/atoms-icons/fonts/*']};
@@ -113,4 +114,5 @@ gulp.task('default', function() {
   gulp.watch(source.coffee, ['coffee']);
   gulp.watch(source.styl, ['styl']);
   gulp.watch(source.yml, ['yml']);
+  gulp.watch(source.dependencies, ['dependencies']);
 });
