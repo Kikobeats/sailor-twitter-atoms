@@ -11,15 +11,15 @@ window.Sailor.registerEndpoint('tweet', 'tweet', 'sort', 'id asc')
 # Sailor.loadingOff = __.Dialog.Loading.hide()
 
 window.Sailor.start = ->
-
   Sailor.socket('GET', Sailor.user).then (error, users) ->
+    console.log users
     __.Entity.User.create user for user in users unless error
 
   Sailor.socket('GET', Sailor.tweet).then (error, tweets) ->
+    console.log tweets
     __.Entity.Tweet.create tweet for tweet in tweets unless error
 
   Sailor.on Sailor.tweet, (tweet) ->
-    console.log "new tweet ::"
     console.log tweet
     __.Entity.Tweet.create tweet.data if tweet.verb is 'created'
 
