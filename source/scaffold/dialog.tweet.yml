@@ -32,7 +32,7 @@ children:
                   text        : Send
                   style       : fluid theme login-context margin-top
                   callbacks:
-                    - onTweet
+                    - onSend
               - Atom.Button:
                   text        : Cancel
                   style       : fluid cancel small signup-context

@@ -1,7 +1,5 @@
 class Atoms.Twitter.Dialog.Tweet extends Atoms.Organism.Dialog
 
-  @events   : ["send", "cancel", "error"]
-
   show: ->
     super
     do @onFormChange
@@ -9,18 +7,15 @@ class Atoms.Twitter.Dialog.Tweet extends Atoms.Organism.Dialog
   # -- Children bubble events --------------------------------------------------
   onClose: ->
     do @hide
-    false
 
   onCancel: ->
     do @hide
-    false
 
-  onTweet: (event, button) ->
+  onSend: (event, button) ->
     form = @section.form
-
     tweet =
       body: form.value().tweet
-      user: Sailor.session().id
+      user: Sailor.store('user').id
 
     Sailor.proxy('POST', Sailor.tweet, tweet).then (error, tweet) =>
       if error
@@ -36,7 +31,6 @@ class Atoms.Twitter.Dialog.Tweet extends Atoms.Organism.Dialog
 
     method = if (form.tweet.length is @_MIN_LENGHT) then "attr" else "removeAttr"
     sendButton.el[method] "disabled", true
-    false
 
   onWrite: ->
     do @onFormChange

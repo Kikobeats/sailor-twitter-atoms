@@ -14,5 +14,5 @@ class Atoms.Twitter.Organism.Main extends Atoms.Organism.Article
 
   # -- Private --------------------------------------------------
   _handler: ->
-    do Atoms.Twitter.start
+    do Sailor.start
     Atoms.Url.path "home/main"

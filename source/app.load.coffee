@@ -14,5 +14,5 @@ Atoms.$ ->
   unless Sailor.store('user')?
     Atoms.Url.path "main/login"
   else
-    # Sailor.start()
+    Sailor.start()
     Atoms.Url.path Atoms.Url.path().substr(1) or "home/main"
