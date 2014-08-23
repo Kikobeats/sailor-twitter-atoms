@@ -16,3 +16,6 @@
 [submodule "bower_components/jsurl"]
 	path = bower_components/jsurl
 	url = https://github.com/Mikhus/jsurl
+[submodule "sailor-client"]
+	path = sailor-client
+	url = https://github.com/sailorjs/sailor-client
