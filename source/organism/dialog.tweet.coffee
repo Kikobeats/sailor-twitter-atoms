@@ -17,11 +17,12 @@ class Atoms.Twitter.Dialog.Tweet extends Atoms.Organism.Dialog
       body: form.value().tweet
       user: Sailor.store('user').id
 
-    Sailor.proxy('POST', Sailor.tweet, tweet).then (error, tweet) =>
+    Sailor.socket('POST', Sailor.tweet, tweet).then (error, tweet) =>
       if error
         @bubble "error", error
       else
         @bubble "tweet", tweet
+        __.Entity.Tweet.create tweet
         form.clean()
         do @hide
 

@@ -19,6 +19,8 @@ window.Sailor.start = ->
     __.Entity.Tweet.create tweet for tweet in tweets unless error
 
   Sailor.on Sailor.tweet, (tweet) ->
+    console.log "new tweet ::"
+    console.log tweet
     __.Entity.Tweet.create tweet.data if tweet.verb is 'created'
 
   Sailor.on Sailor.user, (user) ->
