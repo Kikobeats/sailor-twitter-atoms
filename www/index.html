@@ -54,7 +54,8 @@
         <script src="assets/js/sails.io.js"></script>
         <script>
         Sailor.registerEnvironment('development', 'http://localhost:1337');
-        Sailor.init(io, 'development');
+        Sailor.registerEnvironment('production', 'http://sailor-twitter-api.herokuapp.com');
+        Sailor.init(io, 'production');
         </script>
         <script src="assets/js/atoms.sailor-twitter.js"></script>
 
