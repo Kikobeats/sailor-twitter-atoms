@@ -52,9 +52,9 @@ class Atoms.Organism.SailorSession extends Atoms.Organism.Section
       if error
         @bubble "error", error
       else
-        delete user.tweets
-        Sailor.session user
-        @bubble action, user
+        # delete user.tweets
+        # Sailor.session user
+        # @bubble action, user
 
   # -- Private -----------------------------------------------------------------
   _MIN_LENGHT: 0

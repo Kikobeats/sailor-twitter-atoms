@@ -9,9 +9,10 @@ Atoms.$ ->
   new Atoms.Twitter.Organism.Home {}, "assets/scaffold/article.home.json"
   new Atoms.Twitter.Organism.Menu {}, "assets/scaffold/aside.menu.json"
   new Atoms.Twitter.Dialog.Tweet {}, "assets/scaffold/dialog.tweet.json"
+  new Atoms.Twitter.Dialog.Info {}, "assets/scaffold/dialog.info.json"
 
   unless Sailor.store('user')?
     Atoms.Url.path "main/login"
   else
-    Sailor.start()
+    # Sailor.start()
     Atoms.Url.path Atoms.Url.path().substr(1) or "home/main"
