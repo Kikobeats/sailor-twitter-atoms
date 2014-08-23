@@ -31,6 +31,6 @@ coverage
 # Other
 ############################
 .node_history
-bower_components/momentjs/
-bower_components/sails.io.js/
-bower_components/sailor-client/
+bower_components/momentjs
+bower_components/sails.io.js
+bower_components/sailor-client
