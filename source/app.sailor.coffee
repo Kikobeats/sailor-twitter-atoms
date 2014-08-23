@@ -12,9 +12,6 @@ window.Sailor.registerEndpoint('tweet', 'tweet', 'sort', 'id asc')
 
 window.Sailor.start = ->
 
-  # Sailor.proxy('GET', Sailor.user).then (error, users) =>
-  #   __.Entity.User.create user for user in users
-
   Sailor.socket('GET', Sailor.user).then (error, users) ->
     __.Entity.User.create user for user in users unless error
 
