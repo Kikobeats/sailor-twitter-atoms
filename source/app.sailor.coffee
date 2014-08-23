@@ -7,6 +7,12 @@ Sailor.$ ->
   Sailor.tweet  = "tweet"
   Sailor.tweets = "tweet?sort=id asc"
 
+  # Sailor.registerEndpoint('login', 'user/login')
+  # Sailor.registerEndpoint('signup', 'user')
+  # Sailor.registerEndpoint('user', 'user')
+  # Sailor.registerEndpoint('tweet', 'tweet')
+  # Sailor.registerEndpoint('tweets', 'tweets', 'sort', 'id asc')
+
   # Sailor.token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.InNhaWxvcmpzIg.F860b-9kK3d1k8ESaFIwek_W5BMH2U8-qEE8TbTv-0k'
 
   # TODO: Encerrar en al funcion proxy si es posibles

@@ -33,6 +33,7 @@ var source = {
 var dependencies = {
    js    :[ 'bower_components/quojs/quo.standalone.js',
             'bower_components/bower.hope/hope.js',
+            'bower_components/jsurl/url.min.js',
             'bower_components/atoms/atoms.standalone.js',
             'bower_components/atoms/atoms.app.js',
             'bower_components/momentjs/moment.js',

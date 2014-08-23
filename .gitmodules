@@ -13,3 +13,6 @@
 [submodule "bower_components/quojs"]
 	path = bower_components/quojs
 	url = https://github.com/soyjavi/bower-quojs
+[submodule "bower_components/jsurl"]
+	path = bower_components/jsurl
+	url = https://github.com/Mikhus/jsurl
