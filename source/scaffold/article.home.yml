@@ -20,7 +20,8 @@ children:
           - Molecule.List:
               id: list
               bind:
-                entity : __.Entity.Tweet
+                entity : Atoms.Twitter.Entity.Tweet
+                ## FIXME: Atoms.Twitter.Atom.Tweet?
                 atom   : Twitter.Atom.Tweet
                 create : true
   - Organism.Footer:

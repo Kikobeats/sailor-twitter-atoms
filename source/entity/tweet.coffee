@@ -1,6 +1,6 @@
 "use strict"
 
-class __.Entity.Tweet extends Atoms.Class.Entity
+class Atoms.Twitter.Entity.Tweet extends Atoms.Class.Entity
 
   @fields "id", "body", "user", "createdAt", "updatedAt"
 

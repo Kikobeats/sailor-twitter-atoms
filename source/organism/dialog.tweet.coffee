@@ -22,7 +22,7 @@ class Atoms.Twitter.Dialog.Tweet extends Atoms.Organism.Dialog
         @bubble "error", error
       else
         @bubble "tweet", tweet
-        __.Entity.Tweet.create tweet
+        Atoms.Twitter.Entity.Tweet.create tweet
         form.clean()
         do @hide
 

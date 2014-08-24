@@ -1,6 +1,6 @@
 "use strict"
 
-class __.Entity.Notification extends Atoms.Class.Entity
+class Atoms.Twitter.Entity.Notification extends Atoms.Class.Entity
 
   # @fields "id", "owner", "user", "reference", "type", "created_at"
 
