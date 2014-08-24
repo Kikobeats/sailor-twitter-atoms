@@ -2,6 +2,7 @@
 
 window.Atoms.Twitter = do ->
   Entity  : {}
+  Atom    : {}
   Organism: {}
   Molecule: {}
   Dialog  : {}

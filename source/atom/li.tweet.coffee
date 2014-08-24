@@ -1,6 +1,6 @@
 "use strict"
 
-class Atoms.Atom.Tweet extends Atoms.Atom.Li
+class Atoms.Twitter.Atom.Tweet extends Atoms.Atom.Li
 
   @default:
     method: 'prepend'

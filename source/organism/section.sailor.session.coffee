@@ -28,7 +28,7 @@ class Atoms.Organism.SailorSession extends Atoms.Organism.Section
     super
     do @onFormChange
 
-  onFormChange: =>
+  onFormChange: ->
     form = @form.value()
     method = if (form.mail.length is @_MIN_LENGHT or form.password.length is @_MIN_LENGHT) then "attr" else "removeAttr"
     for child in @form.children when not child.value

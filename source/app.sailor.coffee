@@ -5,10 +5,8 @@ window.Sailor.registerEndpoint('signup', 'user')
 window.Sailor.registerEndpoint('user', 'user')
 window.Sailor.registerEndpoint('tweet', 'tweet', 'sort', 'id asc')
 
-
-# TODO: Encerrar en al funcion proxy si es posibles
-# Sailor.loadingOn  = __.Dialog.Loading.show()
-# Sailor.loadingOff = __.Dialog.Loading.hide()
+Sailor.loadingOn  = __.Dialog.Loading.show.bind(__.Dialog.Loading)
+Sailor.loadingOff = __.Dialog.Loading.hide.bind(__.Dialog.Loading)
 
 window.Sailor.start = ->
   Sailor.socket('GET', Sailor.user).then (error, users) ->
@@ -25,5 +23,3 @@ window.Sailor.start = ->
 
   Sailor.on Sailor.user, (user) ->
     __.Entity.User.create user.data if user.verb is 'created'
-
-# window.Sailor.token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.InNhaWxvcmpzIg.F860b-9kK3d1k8ESaFIwek_W5BMH2U8-qEE8TbTv-0k'

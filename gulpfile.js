@@ -58,15 +58,18 @@ gulp.task('dependencies', function() {
     .pipe(concat('dependencies.' + pkg.name + '.js'))
     .pipe(uglify({mangle: false}))
     .pipe(header(banner, {pkg: pkg}))
-    .pipe(gulp.dest(assets + '/js'));
+    .pipe(gulp.dest(assets + '/js'))
+    .pipe(connect.reload());
 
   gulp.src(dependencies.css)
     .pipe(concat('dependencies.' + pkg.name + '.css'))
     .pipe(header(banner, {pkg: pkg}))
-    .pipe(gulp.dest(assets + '/css'));
+    .pipe(gulp.dest(assets + '/css'))
+    .pipe(connect.reload());
 
   gulp.src(dependencies.fonts)
-    .pipe(gulp.dest(assets + '/css/fonts'));
+    .pipe(gulp.dest(assets + '/css/fonts'))
+    .pipe(connect.reload());
 });
 
 gulp.task('coffee', function() {
@@ -110,9 +113,9 @@ gulp.task('init', function() {
 });
 
 gulp.task('default', function() {
-  gulp.run(['dependencies', 'coffee', 'styl', 'yml', 'webserver']);
+  gulp.start(['dependencies', 'coffee', 'styl', 'yml', 'webserver']);
   gulp.watch(source.coffee, ['coffee']);
   gulp.watch(source.styl, ['styl']);
   gulp.watch(source.yml, ['yml']);
-  gulp.watch('bower_components/sailor-client/dist/sailor.js', ['dependencies']);
+  gulp.watch(dependencies.js, ['dependencies']);
 });
