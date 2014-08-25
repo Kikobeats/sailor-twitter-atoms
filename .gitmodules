@@ -19,3 +19,9 @@
 [submodule "bower_components/sailor-client"]
 	path = bower_components/sailor-client
 	url = https://github.com/sailorjs/sailor-client
+[submodule "bower_components/atoms-app"]
+	path = bower_components/atoms-app
+	url = https://github.com/tapquo/atoms-app
+[submodule "bower_components/atoms-app-theme"]
+	path = bower_components/atoms-app-theme
+	url = https://github.com/tapquo/atoms-app-theme

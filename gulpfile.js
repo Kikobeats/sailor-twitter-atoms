@@ -1,6 +1,7 @@
 "use strict"
 
 // -- DEPENDENCIES -------------------------------------------------------------
+
 var gulp    = require('gulp');
 var coffee  = require('gulp-coffee');
 var concat  = require('gulp-concat');
@@ -13,6 +14,7 @@ var yml     = require('gulp-yml');
 var pkg     = require('./package.json');
 
 // -- FILES --------------------------------------------------------------------
+
 var assets     = './www/assets';
 
 var source = {
