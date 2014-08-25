@@ -3,6 +3,7 @@ class Atoms.Twitter.Dialog.Tweet extends Atoms.Organism.Dialog
   show: ->
     super
     do @onFormChange
+    do @_bindClose
 
   # -- Children bubble events --------------------------------------------------
   onClose: ->
@@ -22,7 +23,7 @@ class Atoms.Twitter.Dialog.Tweet extends Atoms.Organism.Dialog
         @bubble "error", error
       else
         @bubble "tweet", tweet
-        Atoms.Twitter.Entity.Tweet.create tweet
+        __.Entity.Tweet.create tweet
         form.clean()
         do @hide
 
@@ -38,3 +39,8 @@ class Atoms.Twitter.Dialog.Tweet extends Atoms.Organism.Dialog
 
 # -- Private -----------------------------------------------------------------
   _MIN_LENGHT: 0
+
+  _bindClose: ->
+    type = if isMobile() then 'tap' else 'click'
+    @el.parent().on type or "click", =>
+      do @hide
