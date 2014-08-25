@@ -55,6 +55,7 @@ var banner = ['/**',
   ''].join('\n');
 
 // -- TASKS --------------------------------------------------------------------
+
 gulp.task('dependencies', function() {
   gulp.src(dependencies.js)
     .pipe(concat('dependencies.' + pkg.name + '.js'))
@@ -110,14 +111,14 @@ gulp.task('production', function() {
   connect.server({ port: process.env.PORT || 8000, root: 'www/'});
 });
 
-gulp.task('init', function() {
-  gulp.run(['dependencies', 'coffee', 'styl', 'yml']);
+gulp.task('dev', function() {
+  gulp.start(['dependencies', 'coffee', 'styl', 'yml', 'webserver']);
+    gulp.watch(source.coffee, ['coffee']);
+    gulp.watch(source.styl, ['styl']);
+    gulp.watch(source.yml, ['yml']);
+    gulp.watch(dependencies.js, ['dependencies']);
 });
 
 gulp.task('default', function() {
-  gulp.start(['dependencies', 'coffee', 'styl', 'yml', 'webserver']);
-  gulp.watch(source.coffee, ['coffee']);
-  gulp.watch(source.styl, ['styl']);
-  gulp.watch(source.yml, ['yml']);
-  gulp.watch(dependencies.js, ['dependencies']);
+  gulp.start(['dependencies', 'coffee', 'styl', 'yml']);
 });
