@@ -3,7 +3,7 @@ class Atoms.Twitter.Dialog.Tweet extends Atoms.Organism.Dialog
   show: ->
     super
     do @onFormChange
-    do @_bindClose
+    do @_bindKeys
 
   # -- Children bubble events --------------------------------------------------
   onClose: ->
@@ -40,7 +40,11 @@ class Atoms.Twitter.Dialog.Tweet extends Atoms.Organism.Dialog
 # -- Private -----------------------------------------------------------------
   _MIN_LENGHT: 0
 
-  _bindClose: ->
+  _bindKeys: ->
     type = if isMobile() then 'tap' else 'click'
-    @el.parent().on type or "click", =>
-      do @hide
+    parent = @el.parent()
+
+    parent.on type, (event) =>
+     if event.target is parent[0]
+       parent.off type
+       do @hide

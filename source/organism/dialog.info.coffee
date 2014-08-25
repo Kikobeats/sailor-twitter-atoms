@@ -2,7 +2,7 @@ class Atoms.Twitter.Dialog.Info extends Atoms.Organism.Dialog
 
   show: ->
     super
-    do @_bindClose
+    do @_bindKeys
 
   view: (message) ->
     @section.text.el.html message
@@ -14,7 +14,11 @@ class Atoms.Twitter.Dialog.Info extends Atoms.Organism.Dialog
     false
 
   # -- Private -----------------------------------------------------------------
-  _bindClose: ->
+  _bindKeys: ->
     type = if isMobile() then 'tap' else 'click'
-    @el.parent().on type or "click", =>
-      do @hide
+    parent = @el.parent()
+
+    parent.on type, (event) =>
+     if event.target is parent[0]
+       parent.off type
+       do @hide
