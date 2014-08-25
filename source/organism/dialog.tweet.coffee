@@ -13,11 +13,12 @@ class Atoms.Twitter.Dialog.Tweet extends Atoms.Organism.Dialog
     do @hide
 
   onSend: (event, button) ->
+    sendButton = @section.form.send
+    sendButton.el.toggleClass 'loading'
     form = @section.form
     tweet =
       body: form.value().tweet
       user: Sailor.store('user').id
-
     Sailor.socket('POST', Sailor.tweet, tweet).then (error, tweet) =>
       if error
         @bubble "error", error
@@ -26,6 +27,7 @@ class Atoms.Twitter.Dialog.Tweet extends Atoms.Organism.Dialog
         __.Entity.Tweet.create tweet
         form.clean()
         do @hide
+    sendButton.el.toggleClass 'loading'
 
   onFormChange: =>
     form = @section.form.value()

@@ -10,20 +10,6 @@ children:
         - Molecule.Navigation:
             children:
               - Atom.Link:
-                  icon: home
-                  text: Home
-                  events:
-                    - touch
-                  callbacks:
-                    - onHome
-              - Atom.Link:
-                  icon: loading-config
-                  text: Configuration
-                  events:
-                    - touch
-                  callbacks:
-                    - onConfiguration
-              - Atom.Link:
                   icon: power
                   text: Logout
                   events:
