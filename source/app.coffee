@@ -14,4 +14,5 @@ window.isMobile = ->
   check
 
 window.debug = (message) ->
-  console.log "DEBUG :: #{message}" if Sailor.environment() is 'development'
+  if Sailor.environment is 'development'
+    console.log "DEBUG :: #{message}"

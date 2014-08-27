@@ -5,7 +5,7 @@ class __.Entity.Tweet extends Atoms.Class.Entity
   @fields "id", "body", "user", "createdAt", "updatedAt"
 
   parse: ->
-    text        : @user.email
+    text        : @userName()
     info        : @timeFormat()
     description : @body
 
@@ -13,4 +13,4 @@ class __.Entity.Tweet extends Atoms.Class.Entity
     moment(@createdAt).fromNow(true)
 
   userName: ->
-    username = @user.email.split("@")[0]
+    @user.email.split("@")[0]
