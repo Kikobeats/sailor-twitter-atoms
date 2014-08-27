@@ -5,7 +5,7 @@ class __.Entity.Tweet extends Atoms.Class.Entity
   @fields "id", "body", "user", "createdAt", "updatedAt"
 
   parse: ->
-    text        : @userName()
+    text        : @user.email
     info        : @timeFormat()
     description : @body
 
