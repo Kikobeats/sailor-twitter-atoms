@@ -1,6 +1,6 @@
 /**
  * sailor-twitter - Twitter clon based on Sailor
- * @version v1.0.0
+ * @version v1.0.1
  * @link    http://tapquo.com
  * @author   ()
  * @license MIT
