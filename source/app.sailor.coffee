@@ -9,17 +9,17 @@ Sailor.loadingOn  = __.Dialog.Loading.show.bind(__.Dialog.Loading)
 Sailor.loadingOff = __.Dialog.Loading.hide.bind(__.Dialog.Loading)
 
 Sailor.start = ->
-  Sailor.socket('GET', Sailor.user).then (error, users) ->
-    __.Entity.User.create user for user in users unless error
+  # Sailor.socket('GET', Sailor.user).then (error, users) ->
+  #   __.Entity.User.create user for user in users unless error
 
-  Sailor.socket('GET', Sailor.tweet).then (error, tweets) ->
-    __.Entity.Tweet.create tweet for tweet in tweets unless error
+  # Sailor.socket('GET', Sailor.tweet).then (error, tweets) ->
+  #   __.Entity.Tweet.create tweet for tweet in tweets unless error
 
-  Sailor.on Sailor.tweet, (tweet) ->
-    __.Entity.Tweet.create tweet.data if tweet.verb is 'created'
+  # Sailor.on Sailor.tweet, (tweet) ->
+  #   __.Entity.Tweet.create tweet.data if tweet.verb is 'created'
 
-  Sailor.on Sailor.user, (user) ->
-    __.Entity.User.create user.data if user.verb is 'created'
+  # Sailor.on Sailor.user, (user) ->
+  #   __.Entity.User.create user.data if user.verb is 'created'
 
 Sailor.logout = ->
   localStorage.removeItem 'user'
