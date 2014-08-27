@@ -23,6 +23,7 @@ children:
                 entity : __.Entity.Tweet
                 atom   : Atom.Tweet
                 create : true
+                update : true
   - Organism.Footer:
         children:
           - Molecule.Navigation:
