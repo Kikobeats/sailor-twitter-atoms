@@ -46,7 +46,8 @@ class Atoms.Organism.SailorSession extends Atoms.Organism.Section
     else
       user =
         identifier: values.mail
-        password: values.password
+        password  : values.password
+        strategy  : 'local'
 
     Sailor.socket('POST', Sailor[action], user).then (error, user) =>
       if error
